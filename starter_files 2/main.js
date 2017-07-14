@@ -20,11 +20,14 @@ function question1() {
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2() {
+  let priceBetween= [];
   data.forEach(function(element) {
-    if (element.price <= 18 && element.price >= 14) {
-      console.log(element.title);
+    if (element.price <= 18 && element.price >= 14 && element.currency_code === "USD") {
+      priceBetween.push(element.title);
     }
   });
+  console.log(priceBetween);
+
 }
 
 
@@ -43,7 +46,7 @@ function question3() {
 // 4: Display a list of all items who are made of wood.
 function question4() {
   data.forEach(function(element) {
-    element.materials.forEach(function(materials) {
+    element.materials.forEach(function(material) {
       if (materials === "wood") {
         console.log(element.title, "is made of Wood.");
       }
@@ -75,7 +78,7 @@ function question6() {
       iMade++
     }
 
-  })
-  console.log(iMade + " items were made by their sellers.")
+  });
+  console.log(iMade + " items were made by their sellers.");
   // Answer:
 }
